@@ -5,6 +5,7 @@ export const createReducer = (actions, initialState = {}) => {
     if (actions[action.type]) {
       const handler = actions[action.type];
       return {
+        ...state,
         ...handler(state, action),
       };
     }
