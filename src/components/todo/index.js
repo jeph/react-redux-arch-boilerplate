@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Props from './props';
-import Stylesheet from './stylesheet.css';
+import './stylesheet.css';
 
 const Todo = (props) => {
   const { id, title, completed, onCheck } = props;
