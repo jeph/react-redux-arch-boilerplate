@@ -1,2 +1,2 @@
 
-export const APP_TITLE = "Example App";
+export const APP_TITLE = "Todo App";

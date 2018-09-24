@@ -20,15 +20,14 @@ const dispatch = (fnDispatch, actionType, payload) => (
 );
 
 export const createAction = (actionType, fn) => {
-  return () => {
-    const args = arguments;
+  return (args) => {
     return fnDispatch => {
       if (fn) {
         return fn(args)
           .then(payload => dispatch(fnDispatch, actionType, payload))
           .catch(err => dispatch(fnDispatch, actionType, err))
       }
-      return dispatch(fnDispatch, actionType); 
+      return dispatch(fnDispatch, actionType, args); 
     };
   }
 };

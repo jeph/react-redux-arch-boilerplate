@@ -4,8 +4,8 @@ import * as Props from './props';
 const Navbar = (props) => {
   const { title } = props;
   return (
-    <div>
-      <h1>{title}</h1>
+    <div className="p-4">
+      <h1 className="text-center text-white">{title}</h1>
     </div>
   );
 };

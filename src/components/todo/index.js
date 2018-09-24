@@ -1,14 +1,23 @@
 import React from 'react';
 import * as Props from './props';
+import Stylesheet from './stylesheet.css';
 
 const Todo = (props) => {
-  const { title, completed } = props;
+  const { id, title, completed, onCheck } = props;
+
+  const onChange = (ev) => onCheck(id, ev.target.checked);
+  const titleClass = completed ? "text-muted" : "";
+
   return (
-    <div>
-      <h4>
-        {title}
-        <input type="checkbox" checked={completed} />
-      </h4>
+    <div className="row justify-content-between border rounded my-3 bg-white p-3">
+      <h4 className={`col-md-9 ${titleClass}`}>{title}</h4>
+      <div className="col">
+        <input
+          type="checkbox"
+          className="form-control"
+          checked={completed}
+          onChange={onChange} />
+      </div>
     </div>
   );
 };
