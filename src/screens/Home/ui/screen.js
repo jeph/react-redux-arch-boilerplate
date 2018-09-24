@@ -12,11 +12,6 @@ class Home extends PureComponent {
     fetchTodos();
   }
 
-  handleSortTodos = () => {
-    const { sortTodos } = this.props;
-    sortTodos();
-  }
-
   renderTodo = (todo) => (
     <Todo
       key={todo.id}
@@ -30,18 +25,11 @@ class Home extends PureComponent {
     return todos.map(this.renderTodo);
   }
 
-  renderSortBtn = () => (
-    <div>
-      <button onClick={this.handleSortTodos}>Sort</button>
-    </div>
-  )
-
   renderContent = () => {
     const { loaded } = this.props;
     const body = loaded ? this.renderTodos() : this.renderEmptyState();
     return (
       <div>
-        {this.renderSortBtn()}
         {body}
       </div>
     );

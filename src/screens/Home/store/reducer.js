@@ -15,19 +15,8 @@ const onFetchTodos = (state, action) => {
   return state;
 };
 
-const onSortTodos = (state, action) => {
-  state.todos = state.todos.sort((a, b) => {
-    if (a.completed) {
-      return 1;
-    }
-    return -1;
-  });
-  return state;
-}
-
 const actions = {};
 actions[ActionTypes.FETCHING_TODOS] = onFetchingTodos;
 actions[ActionTypes.FETCH_TODOS] = onFetchTodos;
-actions[ActionTypes.SORT_TODOS] = onSortTodos;
 
 export default createReducer(actions, initialState);
