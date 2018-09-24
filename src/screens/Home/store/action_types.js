@@ -1,4 +1,5 @@
-import { NAME } from '../constants';
+import Constants from '../constants';
+const { NAME } = Constants;
 
 export const FETCHING_TODOS = `${NAME}/FETCHING_TODOS`;
 export const FETCH_TODOS = `${NAME}/FETCH_TODOS`;

@@ -1,2 +1,4 @@
 
-export const NAME = 'home';
+export default {
+  NAME: 'home',
+}

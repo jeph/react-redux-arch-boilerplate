@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as AppConstants from 'core/constants';
+import AppConstants from 'core/constants';
 import Actions from '../store/actions';
 import Navbar from 'components/navbar';
 import Todo from 'components/todo';
@@ -57,8 +57,8 @@ class Home extends PureComponent {
   )
 
   renderContent = () => {
-    const { loaded } = this.props;
-    const body = loaded ? this.renderTodos() : this.renderEmptyState();
+    const { loaded, todos } = this.props;
+    const body = (loaded && todos && todos.length) ? this.renderTodos() : this.renderEmptyState();
     return (
       <div className="mt-4">
         <div className="mx-auto col-md-8">
@@ -70,16 +70,16 @@ class Home extends PureComponent {
   }
 
   renderEmptyState = () => (
-    <div>
-      <p>
+    <div className="p-5">
+      <p className="text-white text-center">
         No todos yet.  
       </p>
     </div>
   )
 
   renderLoading = () => (
-    <div>
-      <p>
+    <div className="p-5">
+      <p className="text-white text-center">
         Loading...
       </p>
     </div>

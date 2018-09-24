@@ -1,2 +1,4 @@
 
-export const APP_TITLE = "Todo App";
+export default {
+  APP_TITLE: 'Todo App',
+};

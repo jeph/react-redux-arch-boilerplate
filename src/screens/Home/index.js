@@ -1,4 +1,4 @@
-import * as Constants from './constants';
+import Constants from './constants';
 import reducer from './store/reducer';
 
 export default {
